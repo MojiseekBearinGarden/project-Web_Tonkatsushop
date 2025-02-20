@@ -1,0 +1,236 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Madimi One", sans-serif;
+}
+body{
+  
+    background-color: bisque;
+    
+   
+}
+header.container_header{
+    display: flex;
+    position: fixed;
+    background-color: rgb(237, 158, 62);
+    width: 100%;
+    top:0;
+    justify-content: space-between;
+    z-index: 10;
+    
+    
+    
+}
+div.area_shopname{
+    position: relative;
+    width: 300px;
+}
+div.shop_name img{
+    position: absolute;
+    display: flex;
+    top:0;
+    right: 0;
+    width: 70px;
+    height:70px;
+
+
+}
+div.shop_name{
+    
+    display: flex;
+    font-family: "Madimi One", sans-serif;
+    font-size: 45px;
+    font-weight: bold;
+    padding:  6px;
+    margin-left: 30px;
+    align-items: center;
+    justify-items: center;   
+
+}
+div.title_right_icon{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 50px;
+    
+     }
+/* div.icon_basket {
+    cursor: pointer;
+    display: flex;    
+    font-weight: bold;
+    color: black;
+    border-width: 3px;
+    border-style: solid;
+    border-radius: 100%;
+    background-color: white;
+    align-items: center;
+    justify-content: center;
+    width: 33px;
+    max-width: 100%;
+    height: 33px;
+    max-height: 100%;
+    padding: 30%;
+    margin: 2px;
+}
+.icon_basket:hover{
+   
+    border-color: rgb(4, 167, 36);
+    transition: 0.4s;
+} */
+div.changelanguage{
+    cursor: pointer;
+    display: flex;    
+    font-weight: bold;
+    color: black;
+    border-width: 3px;
+    border-style: solid;
+    border-radius: 100%;
+    background-color: white;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    max-width: 100%;
+    height: 50px;
+    max-height: 100%;
+    padding: 1%;
+    margin: 2px;
+ 
+}
+/* .changelanguage a{
+    text-decoration: none;
+    color: black;
+} */
+div.changelanguage:hover{
+    border-color: rgb(4, 167, 36);
+    transition: 0.4s;
+    
+}
+/* ------------------------------------------------- */
+div.container_menu {
+    display: flex;
+    position:relative;
+    margin-top: 200px;
+    z-index: 1;
+    align-content: center;
+    /* border: 5px solid black; */
+}
+div.main_menu{
+    position:absolute;
+    top:0;
+    display: flex;
+    margin-top:100px;
+    margin-left: 0;
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 0px 70px 70px 0px;
+    width: 300px;
+    background-color: rgb(228, 144, 35);
+    color: white;
+    font-size: 24px;
+    justify-content: start;
+    /* border: 5px solid black; */
+
+}
+div.products_con{
+    display: grid;
+    margin-left: 10px;
+    gap: 50px 100px;
+    grid-template-columns: repeat(6,1fr);
+}
+div.products_img img
+{
+    border-radius: 20%;
+    width: 300px;
+    height: 200px;
+}
+div.products_name{
+    text-align: center;
+    font-size: 0.6cm;
+}
+div.products_price{
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.7cm;
+}
+
+/* ----------------------------------------------------- */
+div.container_drinkmenu {
+    display: flex;
+    position: relative;
+    margin-top: 100px;
+     /* border: 5px solid black; */
+}
+div.drink_menu {
+    position:absolute; 
+    display: flex;
+    margin-left: 0;
+    margin-top: 20px;;
+    padding: 10px;
+    border-radius: 0px 70px 70px 0px;
+    width: 300px;
+    border-color: black;
+    background-color: rgb(228, 144, 35);
+    color: white;
+    font-size: 24px;
+    justify-content: start;
+    /* border: 5px solid; */
+
+}
+div.drinkproducts_con{
+    display: grid;
+    margin-left: 10px;
+    gap: 50px 100px;
+    grid-template-columns: repeat(6,1fr);
+}
+div.drinkproducts_img img
+{
+    border-radius: 20%;
+    background-color: white;
+    width: 190px;
+    height: 200px;
+}
+div.drinkproducts_name{
+    text-align: center;
+    font-size: 0.6cm;
+}
+div.drinkproducts_price{
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.7cm;
+    margin-bottom: 20px;
+}
+/* ----------------------------------------------------- */
+.button_menu{
+    display: flex;
+    justify-content: center;
+}
+.button_add{
+    width: 90px;
+    height: 35px;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    
+}
+.button_add:hover{
+    transition: 0.4s;
+    width: 110px;
+    background-color: green;
+}
+/* ----------------------------------------------------- */
+
+.footer_tonkatsu{
+    margin-top: 5px;
+    padding: 10px;
+    background-color:rgb(237, 158, 62);
+}
+.text_tonkatsu{
+    margin-top: 10px;
+    color: white;
+    text-align: center;
+}
+

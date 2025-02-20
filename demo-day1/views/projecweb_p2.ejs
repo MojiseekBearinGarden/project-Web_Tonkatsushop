@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>MENU FOOD</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Madimi+One&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/tonkatsucss_2.css"> 
+    <link href="/css/styles.css" rel="stylesheet" />
+    <%var mt_L= "l"%>
+    <%var rc_extra= "extra"%>
+    <%var dh_yes= "yes"%>
+    </head>  
+   <header class="blockarea"> 
+        <div class="backbotton" > 
+                <a class="button_back" href = '/home'>Home</a>
+            </div> 
+            <div id="button_lang" onclick="togglelang()" class = "changelanguage">ไทย</div>
+        </header>
+    <body>
+        <section class="py-5">
+            <div class="container px-4 px-lg-5 my-5">
+                <div class="row gx-4 gx-lg-5 align-items-center">
+                    <div style="object-fit: cover;aspect-ratio: 3/2;"class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="/productimg/<%=p.imagefile%>" alt="..." /></div>
+                    <div class="col-md-6">
+                        <div class="small mb-1"><%=p.id%></div>
+                        <%if(p.id==1){%>
+                            <h1 id="nametonkatsu1"class="display-5 fw-bolder"><%=p.name_products%></h1>
+                        <%}%>
+                        <%if(p.id==2){%>
+                            <h1 id="nametonkatsu2"class="display-5 fw-bolder"><%=p.name_products%></h1>
+                        <%}%>
+                        <%if(p.id==3){%>
+                            <h1 id="nametonkatsu3"class="display-5 fw-bolder"><%=p.name_products%></h1>
+                        <%}%>
+                        <%if(p.id==4){%>
+                            <h1 id="nametonkatsu4"class="display-5 fw-bolder"><%=p.name_products%></h1>
+                        <%}%>
+                        <%if(p.id==5){%>
+                            <h1 id="nametonkatsu5"class="display-5 fw-bolder"><%=p.name_products%></h1>
+                        <%}%>
+                        <%if(p.id==6){%>
+                            <h1 id="nametonkatsu6"class="display-5 fw-bolder"><%=p.name_products%></h1>
+                        <%}%>
+                        <div class="fs-5 mb-5">
+                            <span>฿<%=p.price%></span>
+                            
+                        <form id="productsId" method="POST" action="/p2">
+                            <input type="hidden" name="id" value="<%=p.id%>">
+                            <input type="hidden" name="name" value="<%=p.name_products%>">
+                            <input type="hidden" name="price" value="<%=p.price%>">
+                            <%if(p.id==1){%>
+                            <label for="radio_size_m" class = radio_size>
+                                <input type="checkbox" id="radio_size_m" class="radio_inputsize_m" name="size_meat" value="<%=p.mt=mt_L%>">
+                                <div class="radio_radio_m"></div>
+                                <div id="side_L_meat1">Size L (Amount Of Meat 130 g)</div>
+                            </label><br><br>
+                            <label for="radio_size_extra" class = radio_size>
+                                <input type="checkbox" id="radio_size_extra" class="radio_inputsize_extra" name="size_rice" value="<%=p.rc=rc_extra%>">
+                                <div class="radio_radio_extra"></div>
+                                <div id="side_extra_rice1">Extra Rice (Amount Of Meat 180 g)</div> 
+                            </label><br><br>
+                            <label for="side_dishs"class = radio_size>
+                                <input type="checkbox" id="side_dishs" class="input_sidedish" name="sidedish" value="<%=p.dh=dh_yes%>">
+                                <div class="sidedish"></div>
+                                <div id="choosesidedish1">Side dishs (kimchi,misosoup,shreddcabbage)</div>              
+                            </label><br><br>
+                            <%}%>
+                            <%if(p.id==2){%>
+                                <label for="radio_size_m" class = radio_size>
+                                    <input type="checkbox" id="radio_size_m" class="radio_inputsize_m" name="size_meat" value="<%=p.mt=mt_L%>">
+                                    <div class="radio_radio_m"></div>
+                                    <div id="side_L_meat2">Size L (Amount Of Meat 130 g)</div>
+                                </label><br><br>
+                                <label for="radio_size_extra" class = radio_size>
+                                    <input type="checkbox" id="radio_size_extra" class="radio_inputsize_extra" name="size_rice" value="<%=p.rc=rc_extra%>">
+                                    <div class="radio_radio_extra"></div>
+                                    <div id="side_extra_rice2">Extra Rice (Amount Of Meat 180 g)</div> 
+                                </label><br><br>
+                                <label for="side_dishs" class = radio_size>
+                                    <input type="checkbox" id="side_dishs" class="input_sidedish" name="sidedish" value="<%=p.dh=dh_yes%>">
+                                    <div class="sidedish"></div>
+                                    <div id="choosesidedish2">Side dishs (kimchi,misosoup,shreddcabbage)</div>              
+                                </label><br><br>
+                                <%}%>
+                                <%if(p.id==3){%>
+                                    <label for="radio_size_m" class = "radio_size">
+                                        <input type="checkbox" id="radio_size_m" class="radio_inputsize_m" name="size_meat" value="<%=p.mt=mt_L%>">
+                                        <div class="radio_radio_m"></div>
+                                        <div id="side_L_meat3">Size L (Amount Of Meat 130 g)</div>
+                                    </label><br><br>
+                                    <label for="radio_size_extra" class = radio_size>
+                                        <input type="checkbox" id="radio_size_extra" class="radio_inputsize_extra" name="size_rice" value="<%=p.rc=rc_extra%>">
+                                        <div class="radio_radio_extra"></div>
+                                        <div id="side_extra_rice3">Extra Rice (Amount Of Meat 180 g)</div> 
+                                    </label><br><br>
+                                    <label for="side_dishs" class = radio_size>
+                                        <input type="checkbox" id="side_dishs" class="input_sidedish" name="sidedish" value="<%=p.dh=dh_yes%>">
+                                        <div class="sidedish"></div>
+                                        <div id="choosesidedish3">Side dishs (kimchi,misosoup,shreddcabbage)</div>           
+                                    </label><br><br>
+                                    <%}%>
+                                    
+                                    <%if(p.id==4){%>
+                                        <label for="radio_size_m" class = radio_size>
+                                            <input type="checkbox" id="radio_size_m" class="radio_inputsize_m" name="size_meat" value="<%=p.mt=mt_L%>">
+                                            <div class="radio_radio_m"></div>
+                                            <div id="side_L_meat4">Size L (Amount Of Meat 130 g)</div>
+                                        </label><br><br>
+                                        <label for="radio_size_extra" class = radio_size>
+                                            <input type="checkbox" id="radio_size_extra" class="radio_inputsize_extra" name="size_rice" value="<%=p.rc=rc_extra%>">
+                                            <div class="radio_radio_extra"></div>
+                                            <div id="side_extra_rice4">Extra Rice (Amount Of Meat 180 g)</div>
+                                        </label><br><br>
+                                        <label for="side_dishs" class = radio_size>
+                                            <input type="checkbox" id="side_dishs" class="input_sidedish" name="sidedish" value="<%=p.dh=dh_yes%>">
+                                            <div class="sidedish"></div>
+                                            <div id="choosesidedish4">Side dishs (kimchi,misosoup,shreddcabbage)</div>             
+                                        </label><br><br>
+                                        <%}%>
+                            <input class="form-control text-center me-3"name="amount" id="amount" type="num" value="1" style="max-width: 3rem" />
+                            <button class="btn btn-outline-dark flex-shrink-0" type="submit">
+                                <i class="bi-cart-fill me-1"></i>
+                                Add to cart
+                            </button>
+
+                        </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script>
+        renderlang();
+    </script>
+    <script>
+        var th={
+            button_lang:"Eng",        
+            nametonkatsu1: "ข้าวหน้าหมูทอด ทงคัตสึราดซอส",           
+            nametonkatsu3:"ข้าวหน้าหมูทอด ทงคัตสึราดไข่",
+            nametonkatsu3:"ข้าวหน้าไก่ทอด ทงคัตสึราดซอส",
+            nametonkatsu4:"ข้าวหน้าไก่ทอด ทงคัตสึราดไข่",
+            nametonkatsu5:"น้ำอัดลม",
+            nametonkatsu6:"น้ำแร่ธรรมชาติ",
+            side_L_meat1:"ขนาด L (ปริมาณของชิ้นเนื้อ 130 g)",
+            side_L_meat2:"ขนาด L (ปริมาณของชิ้นเนื้อ 130 g)",
+            side_L_meat3:"ขนาด L (ปริมาณของชิ้นเนื้อ 130 g)",
+            side_L_meat4:"ขนาด L (ปริมาณของชิ้นเนื้อ 130 g)",
+            side_extra_rice1:"ขนาดพิเศษ (ปริมาณของข้าว 180 g)",
+            side_extra_rice2:"ขนาดพิเศษ (ปริมาณของข้าว 180 g)",
+            side_extra_rice3:"ขนาดพิเศษ (ปริมาณของข้าว 180 g)",
+            side_extra_rice4:"ขนาดพิเศษ (ปริมาณของข้าว 180 g)",
+            choosesidedish1:"เครื่องเคียง (กิมจิ,ซุปมิโซะ,กะหล่ำปลีซอย)",
+            choosesidedish2:"เครื่องเคียง (กิมจิ,ซุปมิโซะ,กะหล่ำปลีซอย)",
+            choosesidedish3:"เครื่องเคียง (กิมจิ,ซุปมิโซะ,กะหล่ำปลีซอย)",
+            choosesidedish4:"เครื่องเคียง (กิมจิ,ซุปมิโซะ,กะหล่ำปลีซอย)"
+        }
+        var en={
+            button_lang:"ไทย",
+            nametonkatsu1: "Pork Tonkatsu + rice Topped "+
+                           "with sauce",           
+            nametonkatsu2:"Pork Tonkatsu + rice Topped with egg",
+            nametonkatsu3:"Chicken Tonkatsu + rice Topped with sauce",
+            nametonkatsu4:"Chicken Tonkatsu + rice Topped with egg",
+            nametonkatsu5:"Soft drink",
+            nametonkatsu6:"Mineral water",
+            side_L_meat1:"Size L (Amount Of Meat 130 g)",
+            side_L_meat2:"Size L (Amount Of Meat 130 g)",
+            side_L_meat3:"Size L (Amount Of Meat 130 g)",
+            side_L_meat4:"Size L (Amount Of Meat 130 g)",
+            side_extra_rice1:"Extra Rice (Amount Of Meat 180 g)",
+            side_extra_rice2:"Extra Rice (Amount Of Meat 180 g)",
+            side_extra_rice3:"Extra Rice (Amount Of Meat 180 g)",
+            side_extra_rice4:"Extra Rice (Amount Of Meat 180 g)",
+            choosesidedish1:"Side dishs (kimchi,misosoup,shreddcabbage)",
+            choosesidedish2:"Side dishs (kimchi,misosoup,shreddcabbage)",
+            choosesidedish3:"Side dishs (kimchi,misosoup,shreddcabbage)",
+            choosesidedish4:"Side dishs (kimchi,misosoup,shreddcabbage)"
+        }
+        function renderlang(){
+            if(!localStorage.lang){
+                localStorage.setItem("lang","en");
+            }
+            else{
+                $("#button_lang").text(settext("button_lang"));
+                $("#nametonkatsu1").text(settext("nametonkatsu1"));
+                $("#nametonkatsu2").text(settext("nametonkatsu2"));
+
+                $("#nametonkatsu3").text(settext("nametonkatsu3"));
+                $("#nametonkatsu4").text(settext("nametonkatsu4"));
+
+                $("#nametonkatsu5").text(settext("nametonkatsu5"));
+                $("#nametonkatsu6").text(settext("nametonkatsu6"));
+
+                $("#side_L_meat1").text(settext("side_L_meat1"));
+                $("#side_L_meat2").text(settext("side_L_meat2"));
+
+                $("#side_L_meat3").text(settext("side_L_meat3"));
+                $("#side_L_meat4").text(settext("side_L_meat4"));
+
+                $("#side_extra_rice1").text(settext("side_extra_rice1"));
+                $("#side_extra_rice2").text(settext("side_extra_rice2"));
+
+                $("#side_extra_rice3").text(settext("side_extra_rice3"));
+                $("#side_extra_rice4").text(settext("side_extra_rice4"));
+
+                $("#choosesidedish1").text(settext("choosesidedish1"));
+                $("#choosesidedish2").text(settext("choosesidedish2"));
+                $("#choosesidedish3").text(settext("choosesidedish3"));
+                $("#choosesidedish4").text(settext("choosesidedish4"));
+            }
+        }
+        function settext(key){
+            if(localStorage.lang == "en"){
+                return en[key];
+            }
+            else {
+                return th[key];
+            } 
+        }
+        function togglelang(){
+            if(localStorage.lang == "en"){
+                localStorage.setItem("lang","th");
+            }
+            else if (localStorage.lang =="th"){
+                localStorage.setItem("lang","en");
+            }
+            renderlang() ;
+            return "now language:" +localStorage.lang;
+        }
+    </script>
+    <footer class="footer_tonkatsu">
+        <div   class="container_tonkatsu"><p class="text_tonkatsu">T O N K A T S U</p></div>
+    </footer>
+</html>

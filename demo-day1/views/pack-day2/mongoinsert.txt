@@ -1,0 +1,80 @@
+[
+  {
+    "id": 1,
+    "name": "หมอน",
+    "desc": "ใช้หนุน",
+    "imagefile": "pillow.jpg",
+    "imagefile_big": null,
+    "isnew": 0,
+    "ispromo": 0,
+    "price": 150,
+    "discountprice": 125,
+    "stock": 20,
+    "star": 3
+  },
+  {
+    "id": 2,
+    "name": "หมอนดำ",
+    "desc": "ใช้หนุน",
+    "imagefile": "blackpillow.jpg",
+    "imagefile_big": null,
+    "isnew": 0,
+    "ispromo": 1,
+    "price": 200,
+    "discountprice": 199,
+    "stock": 20,
+    "star": 3
+  },
+  {
+    "id": 3,
+    "name": "หมอนขาว",
+    "desc": "ใช้หนุน",
+    "imagefile": "whitepillow.jpg",
+    "imagefile_big": null,
+    "isnew": 0,
+    "ispromo": 0,
+    "price": 200,
+    "discountprice": 199,
+    "stock": 20,
+    "star": 4
+  },
+  {
+    "id": 4,
+    "name": "3หมอน",
+    "desc": "ใช้หนุน",
+    "imagefile": "pillowpilow.png",
+    "imagefile_big": null,
+    "isnew": 0,
+    "ispromo": 1,
+    "price": 300,
+    "discountprice": 299,
+    "stock": 10,
+    "star": 3
+  },
+  {
+    "id": 5,
+    "name": "ฟูกเตียง",
+    "desc": "ใช้นอน",
+    "imagefile": "bedmattress.jpg",
+    "imagefile_big": null,
+    "isnew": 0,
+    "ispromo": 1,
+    "price": 3000,
+    "discountprice": 2999,
+    "stock": 10,
+    "star": 5
+  },
+  {
+    "id": 6,
+    "name": "หมอนสามเหลี่ยม",
+    "desc": "ใช้หนุนและหนุน",
+    "imagefile": "tripilow.jpg",
+    "imagefile_big": null,
+    "isnew": 0,
+    "ispromo": 1,
+    "price": 199,
+    "discountprice": 150,
+    "stock": 5,
+    "star": 4
+  }
+]

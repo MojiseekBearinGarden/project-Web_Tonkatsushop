@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Madimi+One&display=swap" rel="stylesheet">
+    <style>
+        *{
+        font-family: "Madimi One", sans-serif;
+        }
+        body {
+            background-color: rgb(230, 162, 79);
+            color: #343a40;
+        }
+        .navbar {
+            background-color: #343a40;
+            color: #fff;
+        }
+        .navbar-brand {
+            color: #fff;
+        }
+        .card {
+            background-color: #fff;
+            border: 1px solid rgba(0, 0, 0, 0.125);
+        }
+        .card-header {
+            margin-left: 25px;
+            background-color: rgba(0, 0, 0, 0.03);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+        }
+		#productFormWrapper {
+            background-color: #e9ecef; /* Background color for the form wrapper */
+            border: 1px solid #ced4da; /* Border color */
+            padding: 20px; /* Padding */
+            margin-top: 20px; /* Margin top */
+        }
+        #productForm {
+            margin: 0; /* Reset margin */
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.3/css/dataTables.dataTables.css" />
+    <script src="https://cdn.datatables.net/2.0.3/js/dataTables.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            $('#productsTable').DataTable( {
+                ajax: {
+                    url: '/api/orders/',
+                    dataSrc: ''
+                },
+                "columns": [
+                    { "data": "id" },
+                    { "data": "name" },
+                    { "data": "size_meat" },
+                    { "data": "size_rice" },
+                    { "data": "sidedish" },
+                    { "data": "amount" },
+                    { "data": "price" },
+                    { "data": "orderid" }// Add stock column
+                ],
+                "columnDefs": [
+                    { "className": "dt-center", "targets": "_all" } // Center all column data
+                ]
+            });
+
+        });
+
+    </script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <!-- <div class="container">
+        <a class="navbar-brand" href="#">Admin Dashboard</a>
+    </div> -->
+</nav>
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-header">
+            <h3>ORDERS</h3>
+        </div>
+        <div>
+            <div class = "icon_basket"><a class="button_mycart" href = '/admin'>Admin Product Page</a></div>
+        </div>
+        <div class="card-body">
+            <table id="productsTable" class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Size_meat</th>
+                    <th>Size_rice</th>
+                    <th>SideDish</th>
+                    <th>Amount</th>
+                    <th>Price</th>
+                    <th>Order_Id</th> <!-- Add action column -->
+                    <!-- Add more columns if needed -->
+                </tr>
+                </thead>
+                <tbody>
+                <!-- DataTables will populate this tbody with data -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+</body>
+</html>

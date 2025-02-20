@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MENU FOOD</title>
+    <link href="https://fonts.googleapis.com/css2?family=Madimi+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/tonkatsucss_2.css"> 
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Madimi One", sans-serif;
+
+}
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fae8;
+            padding: 20px;
+            font-family: "Madimi One", sans-serif;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #e2d3a6;
+            border: 1px solid rgb(225, 112, 19);
+        }
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+            text-align: left;
+        }
+        th {
+            background-color: rgb(236, 159, 7);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+        }
+        tr:hover {
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<header > 
+    <!-- <div class="backbotton" > 
+            <a class="button_back" href = '/home'>Home</a>
+        </div> -->
+        <div id="button_lang" onclick="togglelang()" class = "changelanguage">ไทย</div>
+</header>
+<script>
+    function deleteItem(orderNo,bottom) {
+    fetch('/deleteItem', {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ orderNo })
+    })
+    .then(response => {
+        if (response.ok) {
+            const row = bottom.parentNode.parentNode;
+            row.remove();
+            
+        } else {
+            console.error('Failed to delete item');
+        }
+    })
+    .catch(error => console.error(error));
+    
+}
+</script>
+<body>
+    <h1 id="Menu_cart">Menu In Cart</h1>
+    <table class="table">
+        <thead class="area">
+            <tr>
+                <!-- <th>ID</th> -->
+                <div><th>Order NO.</th></div>
+                <div><th>Product Name</th></div>
+                <div><th>Size Of Meat</th></div>
+                <div><th>Size Of Rice</th></div>
+                <div><th>Sidedish</th></div>
+                <div><th>Price</th></div>
+                <div><th>Amount</th></div>
+                <div><th>Total</th></div>
+            </tr>
+        </thead>
+        <tbody>
+            <%let countitem = 1%>
+            <%let countbottomdelete=0%>
+            <%var grand1 =0%>
+            <%var grand2 =0%>
+            <%var item_id%>
+            <%var item_name%>
+            <%var item_sizemeat%>
+            <%var item_sizerice%>
+            <%var item_sidedish%>
+            <%var item_price%>
+            <%var item_amount%>
+            <% cart.forEach(item =>{ %>
+               
+                <tr>
+                    
+                   
+                    <td><%=countitem%></td>
+                    <td><%=item.name%></td>
+                    <td><%=item.size_meat%></td>
+                    <td><%=item.size_rice%></td>
+                    <td><%=item.sidedish%></td>
+                    <td><%=item.price%></td>
+                    <td><%=item.amount%></td>
+                    <td><%=item.price * +item.amount%></td>
+                    <%if(countbottomdelete==0){%>
+                        <%countbottomdelete=1%>
+                    
+                    <td><a href = '/home'><button onclick="deleteItem('<%= countitem %>',this)">Delete and Back to Home</button></a></td>
+                    
+                    <%}%>
+                </tr>
+                <%countitem =countitem+1%>
+                <%grand1=item.price* +item.amount%>
+                <%grand2 = (grand1+grand2)%>
+                <%item_id = item.id%>
+                <%item_name = item.name%>
+                <%item_sizemeat = item.size_meat%>
+                <%item_sizerice = item.size_rice%>
+                <%item_sidedish = item.sidedish%>
+                <%item_price = item.price%>
+                <%item_amount = item.amount%>
+            <%});%>
+            <tr>
+                
+                <td colspan="9"id="ccc" style="text-align: right;font-weight: bold;font-size: 24px;"><strong>Total Price : </strong></td>
+                <td><strong style="text-align: right;font-weight: bold;font-size: 24px;"><%=grand2 %></strong></td>
+                    <td>
+                        <section class="py-5">
+                            <form method="POST" action="/api/orders">
+                                    <input type="hidden" name="id" value="<%=item_id%>">
+                                    <input type="hidden" name="name" value="<%=item_name%>">
+                                    <input type="hidden" name="size_meat" value="<%=item_sizemeat%>">
+                                    <input type="hidden" name="size_rice" value="<%=item_sizerice%>">
+                                    <input type="hidden" name="sidedish" value="<%=item_sidedish%>">
+                                    <input type="hidden" name="price" value="<%=item_price%>">
+                                    <input type="hidden"  name="amount" value="<%=item_amount%>">
+                                <button class="btn btn-outline-dark flex-shrink-0" type="submit" onclick="deleteItem('<%= countitem %>',this)"> Add Order</button>
+                            </form>
+                        </section>
+                    </td>
+            </tr>
+           
+        </tbody>
+    </table>
+</body>
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+        <script>
+            renderlang();
+        </script>
+        <script>
+            var th={
+                button_lang:"Eng",
+                Menu_cart:"เมนูในตะกร้า",
+                ccc:"ต้องชำระทั้งหมด : "
+                
+             
+            }
+            var en={
+                button_lang:"ไทย",
+                Menu_cart:"Menu In Cart",
+                ccc:"Total Price : "
+            }
+            function renderlang(){
+                if(!localStorage.lang){
+                    localStorage.setItem("lang","en");
+                }
+                else{
+                    $("#button_lang").text(settext("button_lang"));
+                    $("#Menu_cart").text(settext("Menu_cart"));
+ 
+                    $("#ccc").text(settext("ccc"));
+                   
+
+                }
+            }
+            function settext(key){
+                if(localStorage.lang == "en"){
+                    return en[key];
+                }
+                else {
+                    return th[key];
+                } 
+            }
+            function togglelang(){
+                if(localStorage.lang == "en"){
+                    localStorage.setItem("lang","th");
+                }
+                else if (localStorage.lang =="th"){
+                    localStorage.setItem("lang","en");
+                }
+                renderlang() ;
+                return "now language:" +localStorage.lang;
+            }
+        </script>
+</html>

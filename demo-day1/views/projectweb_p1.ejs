@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>MENU FOOD</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Madimi+One&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/tonkatsucss.css"> 
+    <link rel="icon" href="cat.jpg">
+    </head>
+    <header class="container_header"> 
+        <div class="area_shopname">    
+            <div class = "shop_name">
+                <img src ="/productimg/pork-tonkatsu.png">
+                Tonkatsu
+            </div>
+        </div> 
+            <div class ="title_right_icon">
+                
+                <!-- <div class = "icon_basket"><a class="button_mycart" href = '/mycart'><img src ="/productimg/shopping-cart.png"></a></div> -->
+                
+                <div id="button_lang" onclick="togglelang()" class = "changelanguage">ไทย</div>
+            </div>
+        </header>
+    <body> 
+            
+        <div id="Main_menu" class="main_menu">Main menu</div>
+      
+        <div class = "container_menu">
+            <div class="products_con">
+                <div class="products_item">
+                    <div class="products_img">
+                       <img src="/productimg/pork.png">
+                    </div>
+                    <div id="PorkTonkatsu" class="products_name">
+                        Pork Tonkatsu + rice 
+                        Topped with sauce
+                    </div>
+                    <div id="Pbaht"class="products_price">
+                        135 Baht
+                    </div>
+                    <div class = "button_menu">
+                        <a href="/products/<%=products.id=1%>">
+                        <button class="button_add">ADD</button>
+                        </a>
+                    </div>
+                </div>
+                <div class="products_item">
+                    <div class="products_img">
+                       <img src="/productimg/pork_egg.png">
+                    </div>
+                    <div id="PorkTonkatsu_egg" class="products_name">
+                        Pork Tonkatsu + rice 
+                        Topped with egg
+                    </div>
+                    <div id="PEbaht" class="products_price">
+                        135 Baht
+                    </div>
+                    <div class = "button_menu">
+                        <a href="/products/<%=products.id=2%>">
+                            <button class="button_add">ADD</button>
+                            </a>
+                    </div>
+                </div>
+                <div class="products_item">
+                    <div class="products_img">
+                       <img src="/productimg/chicken.png">
+                    </div>
+                    <div id="ChickenTonkatsu" class="products_name">
+                        Chicken Tonkatsu + rice 
+                        Topped with sauce
+                    </div>
+                    <div  id="Cbaht" class="products_price">
+                        115 Baht
+                    </div>
+                    <div class = "button_menu">
+                        <a href="/products/<%=products.id=3%>">
+                            <button class="button_add">ADD</button>
+                            </a>
+                    </div>
+                </div>
+                <div class="products_item">
+                    <div class="products_img">
+                       <img src="/productimg/chicken_egg.png">
+                    </div>
+                    <div id="ChickenTonkatsu_egg"class="products_name">
+                        Chicken Tonkatsu + rice 
+                        Topped with egg
+                    </div>
+                    <div id="CEbaht" class="products_price">
+                        115 Baht
+                    </div>
+                    <div class = "button_menu">
+                        <a href="/products/<%=products.id=4%>">
+                            <button class="button_add">ADD</button>
+                            </a>
+                    </div>
+                </div>                
+            </div>
+          
+        </div>
+        <div id="Drink_menu" class="drink_menu">Drinks menu</div>
+        
+           
+         
+        <div class = "container_drinkmenu">
+            <div class="drinkproducts_con">
+                <div class="drinkproducts_item">
+                    <div class="drinkproducts_img">
+                       <img src="/productimg/coke.png">
+                    </div>
+                    <div id="Softdrink" class="products_name">
+                        Soft drink
+                    </div>
+                    <div id="SDbaht" class="products_price">
+                        20 Baht
+                    </div>
+                    <div class = "button_menu">
+                        <a href="/products/<%=products.id=5%>">
+                            <button class="button_add">ADD</button>
+                            </a>
+                    </div>
+                </div>
+                <div class="drinkproducts_item">
+                    <div class="drinkproducts_img">
+                       <img src="/productimg/water.png">
+                    </div>
+                    <div id="Mineralwater"class="products_name">
+                        Mineral water
+                    </div>
+                    <div id="WDbaht"class="products_price">
+                        15 Baht
+                    </div>
+                    <div class = "button_menu">
+                        
+                        <a href="/products/<%=products.id=6%>">
+                            <button class="button_add">ADD</button>
+                            </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+        <script>
+            renderlang();
+        </script>
+        <script>
+            var th={
+                button_lang:"Eng",
+                Main_menu:"เมนูหลัก",
+                Drink_menu:"เมนูเครื่องดื่ม",
+                PorkTonkatsu: "ข้าวหน้าหมูทอด ทงคัตสึราดซอส",           
+                PorkTonkatsu_egg:"ข้าวหน้าหมูทอด ทงคัตสึราดไข่",
+                ChickenTonkatsu:"ข้าวหน้าไก่ทอด ทงคัตสึราดซอส",
+                ChickenTonkatsu_egg:"ข้าวหน้าไก่ทอด ทงคัตสึราดไข่",
+                Softdrink:"น้ำอัดลม",
+                Mineralwater:"น้ำแร่ธรรมชาติ",
+                Pbaht:"135 บาท",
+                PEbaht:"135 บาท",
+                Cbaht:"115 บาท",
+                CEbaht:"115 บาท",
+                SDbaht:"20 บาท",
+                WDbaht:"15 บาท"
+            }
+            var en={
+                button_lang:"ไทย",
+                Main_menu:"Main menu",
+                Drink_menu:"Drink menu",
+                PorkTonkatsu: "Pork Tonkatsu + rice Topped "+
+                               "with sauce",           
+                PorkTonkatsu_egg:"Pork Tonkatsu + rice Topped with egg",
+                ChickenTonkatsu:"Chicken Tonkatsu + rice Topped with sauce",
+                ChickenTonkatsu_egg:"Chicken Tonkatsu + rice Topped with egg",
+                Softdrink:"Soft drink",
+                Mineralwater:"Mineral water",
+                Pbaht:"135 Baht",
+                PEbaht:"135 Baht",
+                Cbaht:"115 Baht",
+                CEbaht:"115 Baht",
+                SDbaht:"20 Baht",
+                WDbaht:"15 Baht"
+            }
+            function renderlang(){
+                if(!localStorage.lang){
+                    localStorage.setItem("lang","en");
+                }
+                else{
+                    $("#button_lang").text(settext("button_lang"));
+                    $("#Main_menu").text(settext("Main_menu"));
+                    $("#Drink_menu").text(settext("Drink_menu"));
+
+                    $("#PorkTonkatsu").text(settext("PorkTonkatsu"));
+                    $("#PorkTonkatsu_egg").text(settext("PorkTonkatsu_egg"));
+
+                    $("#ChickenTonkatsu").text(settext("ChickenTonkatsu"));
+                    $("#ChickenTonkatsu_egg").text(settext("ChickenTonkatsu_egg"));
+
+                    $("#Softdrink").text(settext("Softdrink"));
+                    $("#Mineralwater").text(settext("Mineralwater"));
+
+                    $("#Pbaht").text(settext("Pbaht"));
+                    $("#PEbaht").text(settext("PEbaht"));
+                    $("#Cbaht").text(settext("Cbaht"));
+                    $("#CEbaht").text(settext("CEbaht"));
+                    $("#SDbaht").text(settext("SDbaht"));
+                    $("#WDbaht").text(settext("WDbaht"));
+                    
+                   
+
+                }
+            }
+            function settext(key){
+                if(localStorage.lang == "en"){
+                    return en[key];
+                }
+                else {
+                    return th[key];
+                } 
+            }
+            function togglelang(){
+                if(localStorage.lang == "en"){
+                    localStorage.setItem("lang","th");
+                }
+                else if (localStorage.lang =="th"){
+                    localStorage.setItem("lang","en");
+                }
+                renderlang() ;
+                return "now language:" +localStorage.lang;
+            }
+        </script>
+    </body>
+    <footer class="footer_tonkatsu">
+        <div   class="container_tonkatsu"><p class="text_tonkatsu">T O N K A T S U</p></div>
+    </footer>
+    
+</html>
